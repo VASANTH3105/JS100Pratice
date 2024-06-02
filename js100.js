@@ -27,3 +27,52 @@ unary(10);
 ();
 
 //Memoization
+
+console.log(msg);
+var msg = "This is Hoisting"; //undefined
+
+var msg;
+console.log(msg);
+msg = "This is Hoisting";
+
+//memoization
+
+const memoizAddition = () => {
+    let cache = {};
+
+    return (value) => {
+        if(value in cache) {
+            console.log("Returning from cache");
+            return cache[value];
+        } else {
+            console.log("Calculating result");
+            let result = 20 + value;
+            cache[value] = result;
+            return result;
+        }
+    }
+}
+
+const addition = memoizAddition(20);
+console.log(addition);
+console.log(addition);
+
+//setinterval
+
+// setInterval(function() {
+//     console.log("Interval time");
+// }, 2000);
+
+//JSON
+
+var nameJSON = {
+    'name' : 'SV',
+    'age' : 20
+}
+
+console.log(nameJSON);
+var string = JSON.stringify(nameJSON);
+console.log(string);
+
+var partoobj = JSON.parse(string);
+console.log(partoobj);
