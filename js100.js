@@ -76,3 +76,5 @@ console.log(string);
 
 var partoobj = JSON.parse(string);
 console.log(partoobj);
+
+console.log(![]); // false
